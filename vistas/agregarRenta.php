@@ -144,7 +144,7 @@ include_once "../modelos/selectTables.php";
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="../controladores/logout.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cerrar sesion</p>
               </a>
@@ -173,7 +173,7 @@ include_once "../modelos/selectTables.php";
 
                 <center>
                 <table class="table table-hover">
-                
+
                 <tr>
                 <td><B>Fecha:</B></td>
                 <td> <INPUT TYPE="date" NAME="fecha" id="nombre" value="" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=50 required></td>
