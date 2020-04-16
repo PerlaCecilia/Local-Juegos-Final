@@ -193,9 +193,12 @@ include_once '../modelos/selectTables.php';
                           <th>Fecha</th>
                           <th>Hora</th>
                           <th>Gamer</th>
+                          <th>Gamertag</th>
                           <th>Accesorio</th>
                           <th>Juego</th>
                           <th>Consola</th>
+                          <th>Horas</th>
+                          <th>Total</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -207,9 +210,12 @@ include_once '../modelos/selectTables.php';
                         <td><?php echo $resultadoAdminRenta -> fecha ?></td>
                         <td><?php echo $resultadoAdminRenta -> hora ?></td>
                         <td><?php echo $resultadoAdminRenta -> gamer ?></td>
+                        <td><?php echo $resultadoAdminRenta -> gamertag ?></td>
                         <td><?php echo $resultadoAdminRenta -> accesorio ?></td>
                         <td><?php echo $resultadoAdminRenta -> juego ?></td>
                         <td><?php echo $resultadoAdminRenta -> consola ?></td>
+                        <td><?php echo $resultadoAdminRenta -> horas ?></td>
+                        <td><?php echo $resultadoAdminRenta -> total ?></td>
 
                         <td>
                         <form action="editRenta.php" method="post">

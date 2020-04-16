@@ -193,7 +193,6 @@ include_once '../modelos/selectTables.php';
                           <th>Plataforma</th>
                           <th>Numero</th>
                           <th>Serial</th>
-                          <th>Nombre</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -205,7 +204,6 @@ include_once '../modelos/selectTables.php';
                         <td><?php echo $resultadoNormalConsola -> plataforma ?></td>
                         <td><?php echo $resultadoNormalConsola -> numero ?></td>
                         <td><?php echo $resultadoNormalConsola -> serial ?></td>
-                        <td><?php echo $resultadoNormalConsola -> nombre ?></td>
 
                         <td>
                         <form action="editConsola.php" method="post">

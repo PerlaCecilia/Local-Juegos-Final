@@ -199,6 +199,7 @@ include_once '../modelos/selectTables.php';
                           <th>Jugadores</th>
                           <th>Descripcion</th>
                           <th>Estatus</th>
+                          <th>Premio</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -216,6 +217,7 @@ include_once '../modelos/selectTables.php';
                           <td><?php echo $resultadoNormalTorneo -> max_jugadores ?></td>
                           <td><?php echo $resultadoNormalTorneo -> descripcion ?></td>
                           <td><?php echo $resultadoNormalTorneo -> estatus ?></td>
+                          <td><?php echo $resultadoNormalTorneo -> premio ?></td>
                         <td>
                         <form action="editTorneo.php" method="post">
                         <button class="btn btn-success" type="submit" name="editar"

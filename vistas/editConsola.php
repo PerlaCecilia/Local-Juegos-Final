@@ -6,7 +6,7 @@ include_once("../controladores/conexionEspecial.php");
 $nombreFijo = $_POST['editar'];
 //echo $nombreFijo;
 
-$cuery = "SELECT id_plataforma, numero, serial, nombre FROM consola WHERE id_consola = '$nombreFijo'";
+$cuery = "SELECT id_plataforma, numero, serial FROM consola WHERE id_consola = '$nombreFijo'";
 $result = mysqli_query($BD,$cuery);
 
 $numrows = mysqli_num_rows($result);
@@ -15,7 +15,6 @@ while($row = mysqli_fetch_assoc($result)){
   $plataforma = $row['id_plataforma'];
   $numero = $row['numero'];
   $serial = $row['serial'];
-  $nombre = $row['nombre'];
 }
 ?>
 
@@ -188,11 +187,22 @@ while($row = mysqli_fetch_assoc($result)){
 
                 <tr>
                 <td><B>Plataforma:</B></td>
-                <td><select name="plataforma">
-                    <option id="0">...</option>
-                    <option id="1" value="Xbox">Xbox</option>
-                    <option id="2" value="PlayStation">PlayStation</option>
-                </td>
+                <td> <SELECT NAME="plataforma">
+                  <option>...</option>
+                <?php
+                echo "jaja";
+                $q33 = "SELECT id_plataforma as plataforma, nombre FROM plataforma";
+                $r33 = mysqli_query($BD,$q33);
+
+                $numrows = mysqli_num_rows($result);
+
+                while($row33 = mysqli_fetch_assoc($r33)){
+                  $clave1=$row33['plataforma'];
+                  $clave2=$row33['nombre'];
+                  echo "<option value = '$clave1'>".$clave2."</option>";
+                }
+
+                ?></td>
 
                 <tr>
                 <td><B>Numero:</B></td>
@@ -201,10 +211,6 @@ while($row = mysqli_fetch_assoc($result)){
                 <tr>
                 <td><B>Serial:</B></td>
                 <td> <INPUT TYPE="text" NAME="serial" id="apellidos" value="<?php echo $serial; ?>" SIZE=40 MAXLENGTH=48 required></td>
-
-                <tr>
-                <td><B>Nombre:</B></td>
-                <td> <INPUT TYPE="text" NAME="nombre" id="fecha_nac" value="<?php echo $nombre; ?>" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=48 required></td>
 
                 <tr>
 

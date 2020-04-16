@@ -190,7 +190,6 @@ include_once '../modelos/selectTables.php';
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Imagen</th>
                           <th>Nombre</th>
                         </tr>
                       </thead>
@@ -201,7 +200,6 @@ include_once '../modelos/selectTables.php';
                         <tr>
 
                         <td><?php echo $resultadoNormalJuego -> id_juego ?></td>
-                        <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultadoNormalJuego -> imagen ).'" style="height: 120px; width: 75px;"/>'; ?></td>
                         <td><?php echo $resultadoNormalJuego -> nombre ?></td>
                         <td>
                         <form action="editJuego.php" method="post">

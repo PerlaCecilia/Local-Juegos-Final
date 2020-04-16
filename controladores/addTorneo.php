@@ -19,12 +19,10 @@ include_once("conexion.php");
       $jugadores = $_POST['jugadores'];
       $descripcion = $_POST['descripcion'];
       $estatus = $_POST['estatus'];
+      $premio = $_POST['premio'];
 
-      if($juego == 'Infamous'){
-        $juegoreal = '2';
-      }else{
-        $juegoreal = '1';
-      }
+      echo $juego;
+      echo $premio;
 
       if($modalidad == 'Single'){
         $modalidadreal = '1';
@@ -51,9 +49,9 @@ include_once("conexion.php");
 }
 
 //Sentencia donde indico cual tabla va a tener los nuevos valores
-$sentencia=$BD->prepare("INSERT INTO torneo (nombre, juego, fecha, hora, modalidad, forma, max_jugadores, descripcion, estatus)
-                         VALUES (?,?,?,?,?,?,?,?,?)");
-$resultado = $sentencia->execute([$nombre, $juegoreal, $fecha, $hora, $modalidadreal, $formareal, $jugadores, $descripcion, $estatusreal]);
+$sentencia=$BD->prepare("INSERT INTO torneo (nombre, juego, fecha, hora, modalidad, forma, max_jugadores, descripcion, estatus, id_premio)
+                         VALUES (?,?,?,?,?,?,?,?,?,?)");
+$resultado = $sentencia->execute([$nombre, $juego, $fecha, $hora, $modalidadreal, $formareal, $jugadores, $descripcion, $estatusreal, $premio]);
 if ($resultado) {
     //Redirecciona en caso de que se añada correctamente
        phpAlert("Registro añadido correctamente");

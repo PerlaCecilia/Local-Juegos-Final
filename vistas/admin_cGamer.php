@@ -15,7 +15,7 @@ include_once '../modelos/selectTables.php';
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Consolas Admin</title>
+  <title>Gamers Admin</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -194,7 +194,6 @@ include_once '../modelos/selectTables.php';
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>ID</th>
                           <th>Nombre</th>
                           <th>Apellido</th>
                           <th>Fecha Nacimiento</th>
@@ -202,16 +201,17 @@ include_once '../modelos/selectTables.php';
                           <th>Telefono</th>
                           <th>Email</th>
                           <th>Gamertag</th>
-                          <th>Foto</th>
-                          <th>Red Social</th>
+                          <th>Facebook</th>
+                          <th>twitch</th>
+                          <th>mixer</th>
+                          <th>youtube</th>
                         </tr>
                       </thead>
                       <tbody>
 
                         <?php foreach ($resultadoAdminGamer as $resultadoAdminGamer){ ?>
-                        <?php $identificador = $resultadoAdminGamer -> id_gamer ?>
+                        <?php $identificador = $resultadoAdminGamer -> id ?>
                         <tr>
-                        <td><?php echo $resultadoAdminGamer -> id_gamer ?></td>
                         <td><?php echo $resultadoAdminGamer -> nombre ?></td>
                         <td><?php echo $resultadoAdminGamer -> apellido ?></td>
                         <td><?php echo $resultadoAdminGamer -> fecha_nac ?></td>
@@ -219,8 +219,10 @@ include_once '../modelos/selectTables.php';
                         <td><?php echo $resultadoAdminGamer -> telefono ?></td>
                         <td><?php echo $resultadoAdminGamer -> email ?></td>
                         <td><?php echo $resultadoAdminGamer -> gamertag ?></td>
-                        <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($resultadoAdminGamer -> foto).'"style="height: 120px; width: 75px;"/>' ?></td>
-                        <td><?php echo $resultadoAdminGamer -> id_redsocial ?></td>
+                        <td><?php echo $resultadoAdminGamer -> facebook ?></td>
+                        <td><?php echo $resultadoAdminGamer -> twitch ?></td>
+                        <td><?php echo $resultadoAdminGamer -> mixer ?></td>
+                        <td><?php echo $resultadoAdminGamer -> youtube ?></td>
 
                         <td>
                         <form action="editGamer.php" method="post">

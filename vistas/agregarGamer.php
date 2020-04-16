@@ -195,7 +195,7 @@ include_once "../modelos/selectTables.php";
 
                 <tr>
                 <td><B>Telefono:</B></td>
-                <td> <INPUT TYPE="text" NAME="telefono" id="telefono" value="" SIZE=40 required></td>
+                <td> <INPUT TYPE="number" NAME="telefono" id="telefono" value="" SIZE=40 required></td>
 
                 <tr>
                 <td><B>Email:</B></td>
@@ -210,8 +210,20 @@ include_once "../modelos/selectTables.php";
                 <td> <INPUT TYPE="password" NAME="contra" id="usuario" value="" SIZE=40 required></td>
 
                 <tr>
-                <td><B>Redes Sociales:</B></td>
-                <td> <INPUT TYPE="text" NAME="redes" id="redes" value="" SIZE=40 required></td>
+                <td><B>Facebook:</B></td>
+                <td> <INPUT TYPE="text" NAME="facebook" id="redes" value="" SIZE=40></td>
+
+                <tr>
+                <td><B>Twitch:</B></td>
+                <td> <INPUT TYPE="text" NAME="twitch" id="redes" value="" SIZE=40></td>
+
+                <tr>
+                <td><B>Mixer:</B></td>
+                <td> <INPUT TYPE="text" NAME="mixer" id="redes" value="" SIZE=40></td>
+
+                <tr>
+                <td><B>Youtube:</B></td>
+                <td> <INPUT TYPE="text" NAME="youtube" id="redes" value="" SIZE=40></td>
 
                 <tr>
 

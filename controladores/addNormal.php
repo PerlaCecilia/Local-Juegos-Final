@@ -17,30 +17,60 @@ include_once("conexion.php");
       $correo = $_POST['correo'];
       $usuario = $_POST['usuario'];
       $contra = $_POST['contra'];
-      $redes = $_POST['redes'];
       $genero = $_POST['genero'];
+      $facebook = $_POST['facebook'];
+      $twitch = $_POST['twitch'];
+      $mixer = $_POST['mixer'];
+      $youtube = $_POST['youtube'];
 
-      //echo $nombre;
-      //echo $apellidos;
-      //echo $fecha_nac;
-      //echo $telefono;
-      //echo $correo;
-      //echo $usuario;
-      //echo $redes;
-      //echo $genero;
+      echo $nombre;
+      echo $apellidos;
+      echo $fecha_nac;
+      echo $telefono;
+      echo $correo;
+      echo $usuario;
+      echo $genero;
+      echo $facebook;
+      echo $twitch;
+      echo $mixer;
+      echo $youtube;
 
       if($genero == 'Hombre'){
         $generoreal = '1';
       }else{
         $generoreal = '2';
       }
+
+      if($facebook == ''){
+        $facebook = 'No';
+      }elseif($facebook == ' '){
+        $facebook = 'No';
+      }
+
+      if($twitch == ''){
+        $twitch = 'No';
+      }elseif($twitch == ' '){
+        $twitch = 'No';
+      }
+
+      if($mixer == ''){
+        $mixer = 'No';
+      }elseif($mixer == ' '){
+        $mixer = 'No';
+      }
+
+      if($youtube == ''){
+        $youtube = 'No';
+      }elseif($youtube == ' '){
+        $youtube = 'No';
+      }
       //echo $generoreal;
 }
 
 //Sentencia donde indico cual tabla va a tener los nuevos valores
-$sentencia=$BD->prepare("INSERT INTO gamers (nombre,apellido,fecha_nac,genero,telefono,email,gamertag,id_redsocial,contra)
-                         VALUES (?,?,?,?,?,?,?,?,?)");
-$resultado = $sentencia->execute([$nombre, $apellidos, $fecha_nac, $generoreal, $telefono, $correo, $usuario, $redes, $contra]);
+$sentencia=$BD->prepare("INSERT INTO gamers (nombre,apellido,fecha_nac,genero,telefono,email,gamertag,contra,facebook,twitch,mixer,youtube)
+                         VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+$resultado = $sentencia->execute([$nombre, $apellidos, $fecha_nac, $generoreal, $telefono, $correo, $usuario, $contra, $facebook, $twitch, $mixer, $youtube]);
 if ($resultado) {
     //Redirecciona en caso de que se añada correctamente
        phpAlert("Registro añadido correctamente");

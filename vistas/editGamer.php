@@ -6,7 +6,7 @@ include_once("../controladores/conexionEspecial.php");
 $nombreFijo = $_POST['editar'];
 //echo $nombreFijo;
 
-$cuery = "SELECT nombre, apellido, fecha_nac, genero, telefono, email, gamertag, id_redsocial FROM gamers WHERE id_gamer = '$nombreFijo'";
+$cuery = "SELECT nombre, apellido, fecha_nac, genero, telefono, email, gamertag, contra, facebook, twitch, mixer, youtube FROM gamers WHERE id_gamer = '$nombreFijo'";
 $result = mysqli_query($BD,$cuery);
 
 $numrows = mysqli_num_rows($result);
@@ -19,7 +19,11 @@ while($row = mysqli_fetch_assoc($result)){
   $telefono = $row['telefono'];
   $correo = $row['email'];
   $usuario = $row['gamertag'];
-  $redes = $row['id_redsocial'];
+  $contra = $row['contra'];
+  $facebook = $row['facebook'];
+  $twitch = $row['twitch'];
+  $mixer = $row['mixer'];
+  $youtube = $row['youtube'];
 
   //echo $nombre;
   //echo $apellidos;
@@ -211,8 +215,16 @@ while($row = mysqli_fetch_assoc($result)){
                 <td> <INPUT TYPE="date" NAME="fecha_nac" id="fecha_nac" value="<?php echo $fecha_nac; ?>" placeholder="AAAA-MM-DD" SIZE=40 MAXLENGTH=48 required></td>
 
                 <tr>
+                <td><B>Genero:</B></td>
+                <td><select name="genero">
+                    <option>...</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                </td>
+
+                <tr>
                 <td><B>Telefono:</B></td>
-                <td> <INPUT TYPE="text" NAME="telefono" id="telefono" value="<?php echo $telefono; ?>" SIZE=40 required></td>
+                <td> <INPUT TYPE="number" NAME="telefono" id="telefono" value="<?php echo $telefono; ?>" SIZE=40 required></td>
 
                 <tr>
                 <td><B>Correo:</B></td>
@@ -223,20 +235,24 @@ while($row = mysqli_fetch_assoc($result)){
                 <td> <INPUT TYPE="text" NAME="usuario" id="usuario" value="<?php echo $usuario; ?>" SIZE=40 required></td>
 
                 <tr>
-                <td><B>Redes Sociales:</B></td>
-                <td> <INPUT TYPE="text" NAME="redes" id="redes" value="<?php echo $redes; ?>" SIZE=40 required></td>
+                <td><B>Facebook:</B></td>
+                <td> <INPUT TYPE="text" NAME="facebook" id="redes" value="<?php echo $facebook; ?>" SIZE=40></td>
 
                 <tr>
-                <td><B>Genero:</B></td>
-                <td><select name="genero">
-                    <option>...</option>
-                    <option value="Hombre">Hombre</option>
-                    <option value="Mujer">Mujer</option>
-                </td>
+                <td><B>Twitch:</B></td>
+                <td> <INPUT TYPE="text" NAME="twitch" id="redes" value="<?php echo $twitch; ?>" SIZE=40></td>
+
+                <tr>
+                <td><B>Mixer:</B></td>
+                <td> <INPUT TYPE="text" NAME="mixer" id="redes" value="<?php echo $mixer; ?>" SIZE=40></td>
+
+                <tr>
+                <td><B>Youtube:</B></td>
+                <td> <INPUT TYPE="text" NAME="youtube" id="redes" value="<?php echo $youtube; ?>" SIZE=40></td>
 
                 <tr>
                 <td><B>Contraseña:</B></td>
-                <td> <INPUT TYPE="text" NAME="contra" id="redes" value="<?php echo $redes; ?>" SIZE=40 required></td>
+                <td> <INPUT TYPE="text" NAME="contra" id="co" value="<?php echo $contra; ?>" SIZE=40 required></td>
 
                 <tr>
 
