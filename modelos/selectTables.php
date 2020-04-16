@@ -11,7 +11,7 @@
     // Mensaje de alerta
   }
 
-  $getNormalJuego = $BD -> query("SELECT id_juego, imagen, nombre FROM juego");
+  $getNormalJuego = $BD -> query("SELECT id_juego, nombre FROM juego");
   $resultadoNormalJuego = $getNormalJuego -> fetchAll(PDO::FETCH_OBJ);
 
   //"if" en caso de que retorne NULL
@@ -27,7 +27,7 @@
     // Mensaje de alerta
   }
 
-  $getAdminInstalado = $BD -> query("SELECT i.id_instalado as id, j.nombre as juego FROM instalado i INNER JOIN juego j ON i.id_juego = j.id_juego INNER JOIN consola c ON i.id_consola = c.id_consola ORDER BY `id` ASC");
+  $getAdminInstalado = $BD -> query("SELECT i.id_instalado as id, j.nombre as juego, p.nombre as consola FROM instalado i INNER JOIN juego j ON i.id_juego = j.id_juego INNER JOIN consola c ON i.id_consola = c.id_consola INNER JOIN plataforma p ON c.id_plataforma = p.id_plataforma ORDER BY `id` ASC");
   $resultadoAdminInstalado = $getAdminInstalado -> fetchAll(PDO::FETCH_OBJ);
 
   //"if" en caso de que retorne NULL
@@ -35,7 +35,7 @@
     // Mensaje de alerta
   }
 
-  $getAdminRenta = $BD -> query("SELECT r.id_renta as id, r.fecha, r.hora, g.nombre as gamer, a.nombre as accesorio, j.nombre as juego FROM renta r INNER JOIN gamers g ON r.id_gamer = g.id_gamer INNER JOIN accesorio a ON r.id_accesorio = a.id_accesorio INNER JOIN instalado i ON r.id_instalado = i.id_instalado INNER JOIN juego j ON r.juego = j.id_juego INNER JOIN consola c ON r.consola = c.id_consola ORDER BY `id` ASC");
+  $getAdminRenta = $BD -> query("SELECT r.id_renta as id, r.fecha, r.hora, g.nombre as gamer, g.gamertag as gamertag, a.nombre as accesorio, j.nombre as juego, p.nombre as consola, r.horas as horas, r.precio_total as total FROM renta r INNER JOIN gamers g ON r.id_gamer = g.id_gamer INNER JOIN accesorio a ON r.id_accesorio = a.id_accesorio INNER JOIN instalado i ON r.id_instalado = i.id_instalado INNER JOIN juego j ON r.juego = j.id_juego INNER JOIN consola c ON r.consola = c.id_consola INNER JOIN plataforma p ON c.id_plataforma = p.id_plataforma ORDER BY `id` ASC");
   $resultadoAdminRenta = $getAdminRenta -> fetchAll(PDO::FETCH_OBJ);
 
   //"if" en caso de que retorne NULL
@@ -43,7 +43,7 @@
     // Mensaje de alerta
   }
 
-  $getAdminAccesorio = $BD -> query("SELECT id_accesorio, nombre FROM accesorio");
+  $getAdminAccesorio = $BD -> query("SELECT id_accesorio, nombre, precio FROM accesorio");
   $resultadoAdminAccesorio = $getAdminAccesorio -> fetchAll(PDO::FETCH_OBJ);
 
   //"if" en caso de que retorne NULL

@@ -224,7 +224,7 @@ while($row = mysqli_fetch_assoc($result)){
 
                 <tr>
                 <td><B>Telefono:</B></td>
-                <td> <INPUT TYPE="text" NAME="telefono" id="telefono" value="<?php echo $telefono; ?>" SIZE=40 required></td>
+                <td> <INPUT TYPE="number" NAME="telefono" id="telefono" value="<?php echo $telefono; ?>" SIZE=40 required></td>
 
                 <tr>
                 <td><B>Correo:</B></td>

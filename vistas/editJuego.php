@@ -188,10 +188,6 @@ while($row = mysqli_fetch_assoc($result)){
 
                 </tr>
 
-                <tr>
-                <td><B>Imagen:</B></td>
-                <td> <INPUT TYPE="file" NAME="imagen" id="imagen" value="" SIZE=40 MAXLENGTH=50 required></td>
-                </tr>
                 <td ALIGN=CENTER colspan="2">
                 <!--<INPUT NAME = "agregar" TYPE="submit" VALUE="Agregar Administrador"></INPUT>-->
                 <button class="btn btn-success" type="submit" name="editar"

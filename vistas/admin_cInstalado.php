@@ -193,6 +193,7 @@ include_once '../modelos/selectTables.php';
                         <tr>
                           <th>ID</th>
                           <th>Juego</th>
+                          <th>Consola</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -202,6 +203,7 @@ include_once '../modelos/selectTables.php';
                         <tr>
                         <td><?php echo $resultadoAdminInstalado -> id ?></td>
                         <td><?php echo $resultadoAdminInstalado -> juego ?></td>
+                        <td><?php echo $resultadoAdminInstalado -> consola ?></td>
 
                         <td>
                         <form action="editInstalado.php" method="post">

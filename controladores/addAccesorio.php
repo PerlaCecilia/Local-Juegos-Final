@@ -11,13 +11,14 @@ include_once("conexion.php");
   if (isset($_POST['nombre'])) {
 
       $nombre = $_POST['nombre'];
+      $precio = $_POST['precio'];
 
 }
 
 //Sentencia donde indico cual tabla va a tener los nuevos valores
-$sentencia=$BD->prepare("INSERT INTO accesorio (nombre)
-                         VALUES (?)");
-$resultado = $sentencia->execute([$nombre]);
+$sentencia=$BD->prepare("INSERT INTO accesorio (nombre,precio)
+                         VALUES (?,?)");
+$resultado = $sentencia->execute([$nombre,$precio]);
 if ($resultado) {
     //Redirecciona en caso de que se añada correctamente
        phpAlert("Registro añadido correctamente");

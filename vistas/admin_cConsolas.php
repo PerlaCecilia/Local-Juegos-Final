@@ -232,7 +232,7 @@ include_once '../modelos/selectTables.php';
                 </form>
 
 
-              
+              </form>
             </div>
           </div>
           <div class="col-md-6">

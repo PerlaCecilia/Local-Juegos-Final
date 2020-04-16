@@ -9,19 +9,7 @@
   $juego = $_POST['juego'];
   $consola = $_POST['consola'];
 
-  if($juego == 'Call_Of_Duty'){
-        $juegoreal = '1';
-      }else{
-        $juegoreal = '2';
-      }
-
-      if($consola == 'Xbox'){
-        $consolareal = '1';
-      }else{
-        $consolareal = '2';
-      }
-
-  $cuery = "UPDATE instalado SET id_juego = '$juegoreal', id_consola = '$consolareal' WHERE id_instalado = '$nombreFijo'";
+  $cuery = "UPDATE instalado SET id_juego = '$juego', id_consola = '$consola' WHERE id_instalado = '$nombreFijo'";
   echo $cuery;
 
   $result = mysqli_query($BD, $cuery);

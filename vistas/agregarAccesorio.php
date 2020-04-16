@@ -168,9 +168,14 @@ include_once "../modelos/selectTables.php";
 
                 <center>
                 <table class="table table-hover">
+                
                 <tr>
                 <td><B>Nombre:</B></td>
                 <td> <INPUT TYPE="text" NAME="nombre" id="nombre" value="" SIZE=40 MAXLENGTH=50 required></td>
+
+                <tr>
+                <td><B>Precio:</B></td>
+                <td> <INPUT TYPE="number" NAME="precio" id="nombre" value="" SIZE=40 MAXLENGTH=50 required></td>
 
                 <td ALIGN=CENTER colspan="2">
                   <br>

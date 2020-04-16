@@ -182,7 +182,7 @@ include_once '../modelos/selectTables.php';
                   <input type="button" name="" value="Nuevo" class="btn btn-primary">
                 </a>
 
-                <form class="" action="index.html" method="post">
+                <form class="" action="editAccesorio.php" method="post">
 
                   <!--nombre, usuario, correo-->
                   <div class="crudAdmin" align="center">
@@ -191,6 +191,7 @@ include_once '../modelos/selectTables.php';
                         <tr>
                           <th>ID</th>
                           <th>Nombre</th>
+                          <th>Precio</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -200,6 +201,7 @@ include_once '../modelos/selectTables.php';
                         <tr>
                         <td><?php echo $resultadoAdminAccesorio -> id_accesorio ?></td>
                         <td><?php echo $resultadoAdminAccesorio -> nombre ?></td>
+                        <td><?php echo $resultadoAdminAccesorio -> precio ?></td>
 
                         <td align="right">
                         <form action="editAccesorio.php" method="post">
