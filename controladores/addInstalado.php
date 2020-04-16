@@ -13,14 +13,23 @@ include_once("conexion.php");
       $juego = $_POST['juego'];
       $consola = $_POST['consola'];
 
-      echo $juego;echo "\n";
-      echo $consola;
+      if($juego == 'Call_Of_Duty'){
+        $juegoreal = '1';
+      }else{
+        $juegoreal = '2';
+      }
+
+      if($consola == 'Xbox'){
+        $consolareal = '1';
+      }else{
+        $consolareal = '2';
+      }
 }
 
 //Sentencia donde indico cual tabla va a tener los nuevos valores
 $sentencia=$BD->prepare("INSERT INTO instalado (id_juego, id_consola)
                          VALUES (?,?)");
-$resultado = $sentencia->execute([$juego, $consola]);
+$resultado = $sentencia->execute([$juegoreal, $consolareal]);
 if ($resultado) {
     //Redirecciona en caso de que se añada correctamente
        phpAlert("Registro añadido correctamente");

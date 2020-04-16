@@ -195,7 +195,7 @@ include_once "../modelos/selectTables.php";
 
                 <tr>
                 <td><B>Telefono:</B></td>
-                <td> <INPUT TYPE="number" NAME="telefono" id="telefono" value="" SIZE=40 required></td>
+                <td> <INPUT TYPE="text" NAME="telefono" id="telefono" value="" SIZE=40 required></td>
 
                 <tr>
                 <td><B>Email:</B></td>

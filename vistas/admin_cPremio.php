@@ -201,7 +201,7 @@ include_once '../modelos/selectTables.php';
                           <td><?php echo $resultadoAdminPremio -> id_premio ?></td>
                           <td><?php echo $resultadoAdminPremio -> premio ?></td>
                         <td>
-                        <form action="editPremio.php" method="post">
+                        <form action="#" method="post">
                         <button class="btn btn-success" type="submit" name="editar"
                         value="<?php echo htmlspecialchars($identificador); ?>">Editar
                         </button>

@@ -1,6 +1,5 @@
 <?php
 include_once "../modelos/selectTables.php";
-include_once "../controladores/ConexionEspecial.php";
 ?>
 
 <!DOCTYPE html>
@@ -184,85 +183,36 @@ include_once "../controladores/ConexionEspecial.php";
                 <td> <INPUT TYPE="time" NAME="hora" id="apellidos" value="" placeholder="HH:MM:SS" SIZE=40 MAXLENGTH=48 required></td>
 
                 <tr>
-                <td><B>Gamers:</B></td>
-                <td> <SELECT NAME="gamer">
-                  <option>...</option>
-                <?php
-                $cueryGamers = "SELECT id_gamer as id, nombre FROM gamers ORDER BY `id` ASC";
-                $resultGamers = mysqli_query($BD,$cueryGamers);
-
-                while($rowGamers = mysqli_fetch_assoc($resultGamers)){
-                  $nombreGamers=$rowGamers['nombre'];
-                  $idGamers = $rowGamers['id'];
-                  echo $nombreGamers;
-                  echo "<option value = '$idGamers'>".$nombreGamers."</option>";
-                }
-
-                ?></td>
+                <td><B>Gamer:</B></td>
+                <td><select name="gamer">
+                    <option id="0">...</option>
+                    <option id="1" value="Erick">Erick</option>
+                    <option id="2" value="Alfonso">Alfonso</option>
+                </td>
 
                 <tr>
-                <td><B>Accesorios:</B></td>
-                <td> <SELECT NAME="accesorio">
-                  <option>...</option>
-                <?php
-                $cueryAccesorios = "SELECT id_accesorio as id, nombre FROM accesorio ORDER BY `id` ASC";
-                $resultAccesorios = mysqli_query($BD,$cueryAccesorios);
-
-                while($rowAccesorios = mysqli_fetch_assoc($resultAccesorios)){
-                  $nombreAccesorios=$rowAccesorios['nombre'];
-                  $idAccesorios = $rowAccesorios['id'];
-                  echo $nombreAccesorios;
-                  echo "<option value = '$idAccesorios'>".$nombreAccesorios."</option>";
-                }
-
-                ?></td>
+                <td><B>Accesorio:</B></td>
+                <td><select name="genero">
+                    <option id="0">...</option>
+                    <option id="1" value="Diadema">Diadema</option>
+                    <option id="2" value="ControlExtra">Control Extra</option>
+                </td>
 
                 <tr>
                 <td><B>Juego:</B></td>
-                <td> <SELECT NAME="juego">
-                  <option>...</option>
-                <?php
-                $cueryJuego = "SELECT id_juego as id, nombre FROM juego ORDER BY `id` ASC";
-                $resultJuego = mysqli_query($BD,$cueryJuego);
-
-                while($rowJuego = mysqli_fetch_assoc($resultJuego)){
-                  $nombreJuego=$rowJuego['nombre'];
-                  $idJuego = $rowJuego['id'];
-                  echo $nombreJuego;
-                  echo "<option value = '$idJuego'>".$nombreJuego."</option>";
-                }
-
-                ?></td>
+                <td><select name="genero">
+                    <option id="0">...</option>
+                    <option id="1" value="Call_Of_Duty">Call Of Duty</option>
+                    <option id="2" value="Infamous_Second_Son">Infamous Second Son</option>
+                </td>
 
                 <tr>
                 <td><B>Consola:</B></td>
-                <td> <SELECT NAME="consola">
-                  <option>...</option>
-                <?php
-                $cueryConsola = "SELECT c.id_consola as id, p.nombre as nombre FROM consola c INNER JOIN plataforma p ON c.id_plataforma = p.id_plataforma ORDER BY `id` ASC";
-                $resultConsola = mysqli_query($BD,$cueryConsola);
-
-                while($rowConsola = mysqli_fetch_assoc($resultConsola)){
-                  $nombreConsola=$rowConsola['nombre'];
-                  $idConsola = $rowConsola['id'];
-                  echo "<option value = '$idConsola'>".$nombreConsola."</option>";
-                }
-
-                ?></td>
-
-                <tr>
-                <td><B>Horas:</B></td>
-                <td> <INPUT TYPE="number" NAME="horas" id="apellidos" min="1" max="99" value="" SIZE=40 MAXLENGTH=48 required></td>
-
-                <tr>
-                  <td><B>Cantidad Consolas</B></td>
-                  <td><INPUT type="number" name="cantidadConsolas" min="1" max="99" required></td>
-                </tr>
-
-                <tr>
-                  <td><B>Cantidad Accesorios</B></td>
-                  <td><INPUT type="number" name="cantidadAccesorios" min="1" max="99" ></td>
-                </tr>
+                <td><select name="genero">
+                    <option id="0">...</option>
+                    <option id="1" value="Xbox_One_S">Xbox One S</option>
+                    <option id="2" value="PlayStation_4">PlayStation 4</option>
+                </td>
 
                 <tr>
 
@@ -289,7 +239,6 @@ include_once "../controladores/ConexionEspecial.php";
   <script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
   <script src="../../dist/js/adminlte.min.js"></script>
   <script src="../../dist/js/demo.js"></script>
-  <script type="text/javascript" src="../../javascript/javascript.js"></script>
 
 </body>
 </html>

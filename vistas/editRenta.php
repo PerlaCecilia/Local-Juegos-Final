@@ -6,7 +6,7 @@ include_once("../controladores/conexionEspecial.php");
 $nombreFijo = $_POST['editar'];
 //echo $nombreFijo;
 
-$cuery = "SELECT fecha, hora, horas FROM renta WHERE id_renta = '$nombreFijo'";
+$cuery = "SELECT fecha, hora FROM renta WHERE id_renta = '$nombreFijo'";
 $result = mysqli_query($BD,$cuery);
 
 $numrows = mysqli_num_rows($result);
@@ -14,7 +14,6 @@ $numrows = mysqli_num_rows($result);
 while($row = mysqli_fetch_assoc($result)){
   $fecha = $row['fecha'];
   $hora = $row['hora'];
-  $horas = $row['horas'];
 
   //echo $nombre;
   //echo $apellidos;
@@ -203,84 +202,36 @@ while($row = mysqli_fetch_assoc($result)){
                 <td> <INPUT TYPE="time" NAME="hora" id="apellidos" value="<?php echo $hora; ?>" placeholder="HH:MM:SS" SIZE=40 MAXLENGTH=48 required></td>
 
                 <tr>
-                <td><B>Gamers:</B></td>
-                <td> <SELECT NAME="gamer">
-                  <option>...</option>
-                <?php
-                $cueryGamers = "SELECT id_gamer as id, nombre FROM gamers ORDER BY `id` ASC";
-                $resultGamers = mysqli_query($BD,$cueryGamers);
-
-                while($rowGamers = mysqli_fetch_assoc($resultGamers)){
-                  $nombreGamers=$rowGamers['nombre'];
-                  $idGamers = $rowGamers['id'];
-                  echo $nombreGamers;
-                  echo "<option value = '$idGamers'>".$nombreGamers."</option>";
-                }
-
-                ?></td>
+                <td><B>Gamer:</B></td>
+                <td><select name="gamer">
+                    <option id="0">...</option>
+                    <option id="1" value="Erick">Erick</option>
+                    <option id="2" value="Alfonso">Alfonso</option>
+                </td>
 
                 <tr>
-                <td><B>Accesorios:</B></td>
-                <td> <SELECT NAME="accesorio">
-                <?php
-                $cueryAccesorios = "SELECT id_accesorio as id, nombre FROM accesorio ORDER BY `id` ASC";
-                $resultAccesorios = mysqli_query($BD,$cueryAccesorios);
-
-                while($rowAccesorios = mysqli_fetch_assoc($resultAccesorios)){
-                  $nombreAccesorios=$rowAccesorios['nombre'];
-                  $idAccesorios = $rowAccesorios['id'];
-                  echo $nombreAccesorios;
-                  echo "<option value = '$idAccesorios'>".$nombreAccesorios."</option>";
-                }
-
-                ?></td>
+                <td><B>Accesorio:</B></td>
+                <td><select name="accesorio">
+                    <option id="0">...</option>
+                    <option id="1" value="Diadema">Diadema</option>
+                    <option id="2" value="ControlExtra">Control Extra</option>
+                </td>
 
                 <tr>
                 <td><B>Juego:</B></td>
-                <td> <SELECT NAME="juego">
-                  <option>...</option>
-                <?php
-                $cueryJuego = "SELECT id_juego as id, nombre FROM juego ORDER BY `id` ASC";
-                $resultJuego = mysqli_query($BD,$cueryJuego);
-
-                while($rowJuego = mysqli_fetch_assoc($resultJuego)){
-                  $nombreJuego=$rowJuego['nombre'];
-                  $idJuego = $rowJuego['id'];
-                  echo $nombreJuego;
-                  echo "<option value = '$idJuego'>".$nombreJuego."</option>";
-                }
-
-                ?></td>
+                <td><select name="juego">
+                    <option id="0">...</option>
+                    <option id="1" value="Call_Of_Duty">Call Of Duty</option>
+                    <option id="2" value="Infamous_Second_Son">Infamous Second Son</option>
+                </td>
 
                 <tr>
                 <td><B>Consola:</B></td>
-                <td> <SELECT NAME="consola">
-                  <option>...</option>
-                <?php
-                $cueryConsola = "SELECT c.id_consola as id, p.nombre as nombre FROM consola c INNER JOIN plataforma p ON c.id_plataforma = p.id_plataforma ORDER BY `id` ASC";
-                $resultConsola = mysqli_query($BD,$cueryConsola);
-
-                while($rowConsola = mysqli_fetch_assoc($resultConsola)){
-                  $nombreConsola=$rowConsola['nombre'];
-                  $idConsola = $rowConsola['id'];
-                  echo "<option value = '$idConsola'>".$nombreConsola."</option>";
-                }
-
-                ?></td>
-
-                <tr>
-                <td><B>Horas:</B></td>
-                <td> <INPUT TYPE="number" NAME="horas" id="apellidos" value="<?php echo $horas; ?>" SIZE=40 MAXLENGTH=48 required></td>
-
-                <tr>
-                  <td><B>Cantidad Consolas</B></td>
-                  <td><INPUT type="number" name="cantidadConsolas" required></td>
-                </tr>
-
-                <tr>
-                  <td><B>Cantidad Accesorios</B></td>
-                  <td><INPUT type="number" name="cantidadAccesorios" ></td>
-                </tr>
+                <td><select name="consola">
+                    <option id="0">...</option>
+                    <option id="1" value="Xbox_One_S">Xbox One S</option>
+                    <option id="2" value="PlayStation_4">PlayStation 4</option>
+                </td>
 
                 <tr>
 

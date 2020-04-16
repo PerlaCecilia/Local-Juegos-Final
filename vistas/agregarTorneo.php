@@ -1,6 +1,5 @@
 <?php
 include_once "../modelos/selectTables.php";
-include_once "../controladores/ConexionEspecial.php";
 ?>
 
 <!DOCTYPE html>
@@ -180,20 +179,11 @@ include_once "../controladores/ConexionEspecial.php";
 
                 <tr>
                 <td><B>Juego:</B></td>
-                <td> <SELECT NAME="juego">
-                  <option>...</option>
-                <?php
-                $cuery2 = "SELECT id_juego as id, nombre FROM juego ORDER BY `id` ASC";
-                $result2 = mysqli_query($BD,$cuery2);
-
-                while($row32 = mysqli_fetch_assoc($result2)){
-                  $nombreJuego=$row32['nombre'];
-                  $idJuego = $row32['id'];
-                  echo $nombreJuego;
-                  echo "<option value = '$idJuego'>".$nombreJuego."</option>";
-                }
-
-                ?></td>
+                <td><select name="juego">
+                    <option id="0">...</option>
+                    <option id="1" value="CallOfDuty">Call Of Duty</option>
+                    <option id="2" value="Infamous">Infamous Second Son</option>
+                </td>
 
                 <tr>
                 <td><B>Fecha:</B></td>
@@ -236,23 +226,6 @@ include_once "../controladores/ConexionEspecial.php";
                     <option id="2" value="EnCurso">En Curso</option>
                     <option value="Finalizado">Finalizado</option>
                 </td>
-
-                <tr>
-                <td><B>Premios:</B></td>
-                <td> <SELECT NAME="premio">
-                  <option>...</option>
-                <?php
-                $cueryPremio = "SELECT id_premio as id, premio FROM premio ORDER BY `id` ASC";
-                $resultPremio = mysqli_query($BD,$cueryPremio);
-
-                while($rowPremio = mysqli_fetch_assoc($resultPremio)){
-                  $idPremio=$rowPremio['id'];
-                  $nombrePremio = $rowPremio['premio'];
-                  echo $idPremio;
-                  echo "<option value = '$idPremio'>".$nombrePremio."</option>";
-                }
-
-                ?></td>
 
                 <tr>
 

@@ -5,14 +5,13 @@ include_once("../controladores/conexionEspecial.php");
 
 $nombreFijo = $_POST['editar'];
 
-$cuery = "SELECT nombre, precio FROM accesorio WHERE id_accesorio = '$nombreFijo'";
+$cuery = "SELECT nombre FROM accesorio WHERE id_accesorio = '$nombreFijo'";
 $result = mysqli_query($BD,$cuery);
 
 $numrows = mysqli_num_rows($result);
 
 while($row = mysqli_fetch_assoc($result)){
   $nombre = $row['nombre'];
-  $precio = $row['precio'];
 }
 ?>
 
@@ -185,10 +184,6 @@ while($row = mysqli_fetch_assoc($result)){
                 <tr>
                 <td><B>Nombre:</B></td>
                 <td> <INPUT TYPE="text" NAME="nombre" id="nombre" value="<?php echo $nombre; ?>" SIZE=40 MAXLENGTH=50 required></td>
-
-                <tr>
-                <td><B>Precio:</B></td>
-                <td> <INPUT TYPE="number" NAME="precio" id="nombre" value="<?php echo $precio; ?>" SIZE=40 MAXLENGTH=50 required></td>
 
                 <td ALIGN=CENTER colspan="2">
                   <br>

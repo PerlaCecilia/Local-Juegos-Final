@@ -22,7 +22,12 @@ include_once("../controladores/conexionEspecial.php");
       $jugadores = $_POST['jugadores'];
       $descripcion = $_POST['descripcion'];
       $estatus = $_POST['estatus'];
-      $premio = $_POST['premio'];
+
+      if($juego == 'Infamous'){
+        $juegoreal = '2';
+      }else{
+        $juegoreal = '1';
+      }
 
       if($modalidad == 'Single'){
         $modalidadreal = '1';
@@ -46,7 +51,7 @@ include_once("../controladores/conexionEspecial.php");
         $estatusreal = '2';
       }
 
-  $cuery = "UPDATE torneo SET nombre = '$nombre', juego = '$juego', fecha = '$fecha', hora = '$hora', modalidad = '$modalidadreal', forma = '$formareal', max_jugadores = '$jugadores', descripcion = '$descripcion', estatus = '$estatusreal', id_premio = '$premio' WHERE id_torneo = '$nombreFijo'";
+  $cuery = "UPDATE torneo SET nombre = '$nombre', juego = '$juegoreal', fecha = '$fecha', hora = '$hora', modalidad = '$modalidadreal', forma = '$formareal', max_jugadores = '$jugadores', descripcion = '$descripcion', estatus = '$estatusreal' WHERE id_torneo = '$nombreFijo'";
   echo $cuery;
 
   $result = mysqli_query($BD, $cuery);

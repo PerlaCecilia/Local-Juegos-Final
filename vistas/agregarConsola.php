@@ -181,15 +181,14 @@ include_once("../controladores/conexionEspecial.php");
                   <option>...</option>
                 <?php
                 echo "jaja";
-                $q33 = "SELECT id_plataforma as plataforma, nombre FROM plataforma";
+                $q33 = "SELECT nombre FROM plataforma";
                 $r33 = mysqli_query($BD,$q33);
 
                 $numrows = mysqli_num_rows($result);
 
                 while($row33 = mysqli_fetch_assoc($r33)){
-                  $clave1=$row33['plataforma'];
-                  $clave2=$row33['nombre'];
-                  echo "<option value = '$clave1'>".$clave2."</option>";
+                  $clave=$row33['nombre'];
+                  echo "<option value = '$clave'>".$clave."</option>";
                 }
 
                 ?></td>
@@ -209,6 +208,10 @@ include_once("../controladores/conexionEspecial.php");
                 <tr>
                 <td><B>Serial:</B></td>
                 <td> <INPUT TYPE="text" NAME="serial" id="fecha_nac" value="" SIZE=40 MAXLENGTH=48 required></td>
+
+                <tr>
+                <td><B>Nombre:</B></td>
+                <td> <INPUT TYPE="text" NAME="nombre" id="telefono" value="" SIZE=40 required></td>
 
                 <tr>
 

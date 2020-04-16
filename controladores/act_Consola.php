@@ -9,8 +9,9 @@
   $newplataforma = $_POST['plataforma'];
   $newnumero = $_POST['numero'];
   $newserial = $_POST['serial'];
+  $newnombre = $_POST['nombre'];
 
-  /*if ($newplataforma == 'Nintendo') {
+  if ($newplataforma == 'Nintendo') {
       $plataformareal = 1;
   }elseif($newplataforma == 'PlayStation'){
       $plataformareal = 2;
@@ -18,9 +19,9 @@
       $plataformareal = 3;
   }else{
       $plataformareal = 4;
-  }*/
+  }
 
-  $cuery = "UPDATE consola SET id_plataforma = '$newplataforma', numero = '$newnumero', serial = '$newserial' WHERE id_consola = '$nombreFijo'";
+  $cuery = "UPDATE consola SET id_plataforma = '$plataformareal', numero = '$newnumero', serial = '$newserial', nombre = '$newnombre' WHERE id_consola = '$nombreFijo'";
   echo $cuery;
 
   $result = mysqli_query($BD, $cuery);

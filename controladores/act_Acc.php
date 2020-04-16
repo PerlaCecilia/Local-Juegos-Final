@@ -7,12 +7,11 @@
   echo $nombreFijo;
 
   $newnombre = $_POST['nombre'];
-  $newprecio = $_POST['precio'];
 
   echo $newnombre;
 
 
-  $cuery = "UPDATE accesorio SET nombre = '$newnombre', precio = '$newprecio' WHERE id_accesorio = '$nombreFijo'";
+  $cuery = "UPDATE accesorio SET nombre = '$newnombre' WHERE id_accesorio = '$nombreFijo'";
   echo $cuery;
 
   $result = mysqli_query($BD, $cuery);

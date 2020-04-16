@@ -8,11 +8,22 @@
 include_once("conexion.php");
 
 //Verifica que si tenga un valor el campo con id nombre y asigna el resto de las variables
-  if (isset($_POST['plataforma'])) {
+  if (isset($_POST['nombre'])) {
 
       $plataforma = $_POST['plataforma'];
       $numero = $_POST['numero'];
       $serial = $_POST['serial'];
+      $nombre = $_POST['nombre'];
+
+      if ($plataforma == 'Nintendo') {
+      	$plataformareal = 1;
+      }elseif($plataforma == 'PlayStation'){
+      	$plataformareal = 2;
+      }elseif($plataforma == 'Xbox'){
+        $plataformareal = 3;
+      }else{
+        $plataformareal = 4;
+      }
 
       echo $plataforma;
       echo "\n";
@@ -20,14 +31,16 @@ include_once("conexion.php");
       echo "\n";
       echo $serial;
       echo "\n";
-      //echo $plataformareal;
+      echo $nombre;
+      echo "\n";
+      echo $plataformareal;
 
 }
 
 //Sentencia donde indico cual tabla va a tener los nuevos valores
-$sentencia=$BD->prepare("INSERT INTO consola (id_plataforma,numero,serial)
-                         VALUES (?,?,?)");
-$resultado = $sentencia->execute([$plataforma, $numero, $serial]);
+$sentencia=$BD->prepare("INSERT INTO consola (id_plataforma,numero,serial,nombre)
+                         VALUES (?,?,?,?)");
+$resultado = $sentencia->execute([$plataformareal, $numero, $serial, $nombre]);
 if ($resultado) {
     //Redirecciona en caso de que se añada correctamente
        phpAlert("Registro añadido correctamente");

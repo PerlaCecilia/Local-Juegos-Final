@@ -1,6 +1,5 @@
 <?php
 include_once "../modelos/selectTables.php";
-include_once "../controladores/ConexionEspecial.php";
 $nombreFijo = $_POST['editar'];
 ?>
 
@@ -173,36 +172,19 @@ $nombreFijo = $_POST['editar'];
                 
                 <tr>
                 <td><B>Juego:</B></td>
-                <td> <SELECT NAME="juego">
-                  <option>...</option>
-                <?php
-                $cuery2 = "SELECT id_juego as id, nombre FROM juego ORDER BY `id` ASC";
-                $result2 = mysqli_query($BD,$cuery2);
-
-                while($row32 = mysqli_fetch_assoc($result2)){
-                  $nombreJuego=$row32['nombre'];
-                  $idJuego = $row32['id'];
-                  echo $nombreJuego;
-                  echo "<option value = '$idJuego'>".$nombreJuego."</option>";
-                }
-
-                ?></td>
+                <td><select name="juego">
+                    <option id="0">...</option>
+                    <option id="1" value="Call_Of_Duty">Call Of Duty</option>
+                    <option id="2" value="Infamous_Second_Son">Infamous Second Son</option>
+                </td>
 
                 <tr>
                 <td><B>Consola:</B></td>
-                <td> <SELECT NAME="consola">
-                  <option>...</option>
-                <?php
-                $cuery1 = "SELECT c.id_consola as id, p.nombre as nombre FROM consola c INNER JOIN plataforma p ON c.id_plataforma = p.id_plataforma ORDER BY `id` ASC";
-                $result1 = mysqli_query($BD,$cuery1);
-
-                while($row33 = mysqli_fetch_assoc($result1)){
-                  $nombreConsola=$row33['nombre'];
-                  $idConsola = $row33['id'];
-                  echo "<option value = '$idConsola'>".$nombreConsola."</option>";
-                }
-
-                ?></td>
+                <td><select name="consola">
+                    <option id="0">...</option>
+                    <option id="1" value="Xbox">Xbox One S</option>
+                    <option id="2" value="Playstation">PlayStation 4</option>
+                </td>
 
                 <tr>
 
